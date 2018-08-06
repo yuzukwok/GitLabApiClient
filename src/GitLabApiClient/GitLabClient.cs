@@ -46,6 +46,7 @@ namespace GitLabApiClient
             Projects = new ProjectsClient(_httpFacade, projectQueryBuilder);
             Users = new UsersClient(_httpFacade);
             Groups = new GroupsClient(_httpFacade, groupsQueryBuilder, projectsGroupsQueryBuilder);
+            Pipelines=new PipelineClient(_httpFacade);
         }
 
         /// <summary>
@@ -72,6 +73,11 @@ namespace GitLabApiClient
         /// Access GitLab's groups API.
         /// </summary>
         public GroupsClient Groups { get; }
+        
+        /// <summary>
+        /// Access GitLab's pipelines API
+        /// </summary>
+        public  PipelineClient Pipelines { get;  }
 
         /// <summary>
         /// Host address of GitLab instance. For example https://gitlab.example.com or https://gitlab.example.com/api/v4/.
