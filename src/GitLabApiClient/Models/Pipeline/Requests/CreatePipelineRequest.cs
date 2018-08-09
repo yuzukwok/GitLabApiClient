@@ -12,6 +12,14 @@ namespace GitLabApiClient.Models.Pipeline.Requests
         public  string Ref { get; set; }
         
         [JsonProperty("variables")]
-        public  IList<KeyValuePair<string,string>> Variables { get; set; }
+        public  IList<VarItem> Variables { get; set; }
+    }
+
+    public class VarItem
+    {
+        [JsonProperty("key")]
+        public  string Key { get; set; }
+        [JsonProperty("value")]
+        public  string Value { get; set; }
     }
 }
